@@ -23,6 +23,8 @@ from rest_framework.authtoken.views import ObtainAuthToken
 
 from course_management.views import CourseListCreateView,CourseRetrieveUpdateDeleteView
 
+from module_management.views import ModuleCreateView,ModuleRetieveUpdateDelete
+
 urlpatterns = [
     path('admin/', admin.site.urls),
 
@@ -37,5 +39,9 @@ urlpatterns = [
     #course
     path('courses/',CourseListCreateView.as_view()),
     path('courses/<int:pk>/',CourseRetrieveUpdateDeleteView.as_view()),
+
+    #module 
+    path('course/<int:pk>/module/',ModuleCreateView.as_view()),
+    path('module/<int:pk>/',ModuleRetieveUpdateDelete.as_view()),
 
 ]
