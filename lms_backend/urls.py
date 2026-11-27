@@ -17,7 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from accounts.views import TrainerSignUpView,TrainerProfileRetrieveUpdateView
+from accounts.views import TrainerSignUpView,TrainerProfileRetrieveUpdateView,StudentSignUpView,StudentProfileRetrieveUpdateView
 
 from rest_framework.authtoken.views import ObtainAuthToken
 
@@ -33,8 +33,12 @@ urlpatterns = [
 
     #trainer
     path('trainer/signup/',TrainerSignUpView.as_view()),
-    #profile
+    #Trainer profile
     path('trainer/profile/',TrainerProfileRetrieveUpdateView.as_view()),
+
+    #student
+    path('student/signup/',StudentSignUpView.as_view()),
+    path('student/profile/',StudentProfileRetrieveUpdateView.as_view()),
 
     #token
     path('token/',ObtainAuthToken.as_view()),
